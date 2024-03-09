@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if post_id %}
+            <p>Modificant el POST {{ post_id }}</p>
+        {% else %}
+            <p>Nou POST</p>
+        {% endif %}
+    </title>
+    <link rel="stylesheet" href='{{ url_for("static", filename="base.css") }}'>
+</head>
+<body>
+    {% if post_id %}
+        <h1>MODIFICACIÓ POST</h1>
+        <p>Modificant el POST {{ post_id }}</p>
+    {% else %}
+        <h1>NOU POST</h1>
+    {% endif %}
+    
+    
+</body>
+</html>
