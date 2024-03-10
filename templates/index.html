@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TUTORIAL FLASK: MINIBLOG</title>
-    <link rel="stylesheet" href='{{ url_for("static", filename="base.css") }}'>
-</head>
-<body>
+{% extends "base_template.html" %}
+{% block title %}TUTORIAL FLASK: MINIBLOG{% endblock %}
+{% block content %}
     <h1>NUMERO POSTS</h1>
-    <p>{{ num_posts }} POSTS</p>
-    
-</body>
-</html>
+    <p>ACTUALMENT HI HA {{ num_posts }} POSTS PUBLICATS</p>
+{% endblock %}

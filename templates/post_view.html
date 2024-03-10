@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ slug_title }}</title>
-    <link rel="stylesheet" href='{{ url_for("static", filename="base.css") }}'>
-</head>
-<body>
+{% extends "base_template.html" %}
+{% block title %}{{ slug_title }}{% endblock %}
+{% block content %}
     <h1>SLUG TITOL POST</h1>
-    <p>Mostrant el POST: {{ slug_title }}</p>
-    
-</body>
-</html>
+    <p>MOSTRANT EL POST: {{ slug_title }}</p>
+{% endblock %}
