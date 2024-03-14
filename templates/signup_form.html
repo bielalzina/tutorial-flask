@@ -1,0 +1,13 @@
+{% extends "base_template.html" %}
+{% block title %}REGISTRO USUARIOS{% endblock %}
+{% block content %}
+    <form action="" method="post">
+        <label for="name">NOMBRE: </label>
+        <input type="text" id="name" name="name" /><br>
+        <label for="email">EMAIL: </label>
+        <input type="text" id="email" name="email" /><br>
+        <label for="password">CONTRASEÑA:</label>
+        <input type="password" id="password" name="password" /><br>
+        <input type="submit" id="send-signup" name="signup" value="REGISTRAR" /><br>
+    </form>
+{% endblock %}

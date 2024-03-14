@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -17,3 +17,19 @@ def show_post(slug):
 @app.route("/admin/post/<int:post_id>/")
 def post_form(post_id=None):
    return render_template("admin/post_form.html", post_id=post_id)
+
+@app.route('/signup/', methods=["GET","POST"])
+def show_signup_form():
+   if request.method=='POST':
+      name = request.form['name']
+      # print(name)
+      email = request.form['email']
+      # print(email)
+      password = request.form['password']
+      # print(password)
+      next = request.args.get('next',None)
+      # print(next)
+      if next:
+         return redirect(next)
+      return redirect(url_for('index'))
+   return render_template("signup_form.html")
