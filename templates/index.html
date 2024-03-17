@@ -1,6 +1,12 @@
 {% extends "base_template.html" %}
 {% block title %}TUTORIAL FLASK: MINIBLOG{% endblock %}
 {% block content %}
-    <h1>NUMERO POSTS</h1>
+    <h1>POSTS PUBLICATS</h1>
+    <ul>
+        {% for post in posts %}
+            <li>{{ post.title }}</li>
+        {% endfor %}
+    </ul>
     <p>ACTUALMENT HI HA {{ num_posts }} POSTS PUBLICATS</p>
+
 {% endblock %}

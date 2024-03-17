@@ -1,16 +1,40 @@
 {% extends "base_template.html" %}
 {% block title %}
-    {% if post_id %}
-        <p>Modificant el POST {{ post_id }}</p>
+    {% if form.title.data %}
+        {{ form.title.data }}
     {% else %}
-        <p>Nou POST</p>
+        <p>NOU POST</p>
     {% endif %}
 {% endblock %}
 {% block content %}
-    {% if post_id %}
-        <h1>MODIFICACIÓ POST</h1>
-        <p>Modificant el POST {{ post_id }}</p>
-    {% else %}
-        <h1>NOU POST</h1>
-    {% endif %}
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.title.label }}
+            {{ form.title(size=128) }}<br>
+            {% for error in form.title.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div>
+            {{ form.title_slug.label }}
+            {{ form.title_slug(size=128) }}<br>
+            {% for error in form.title_slug.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div>
+            {{ form.content.label }}
+            {{ form.content }}<br>
+            {% for error in form.content.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </div>
+
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
 {% endblock %}
