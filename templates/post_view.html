@@ -1,6 +1,7 @@
 {% extends "base_template.html" %}
-{% block title %}{{ slug_title }}{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
 {% block content %}
-    <h1>SLUG TITOL POST</h1>
-    <p>MOSTRANT EL POST: {{ slug_title }}</p>
+<h1>{{ post.title }}</h1>
+<p><strong>CONTINGUT DEL POST:</strong></p>
+<p>{{ post.content }}</p>
 {% endblock %}
